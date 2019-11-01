@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
-import InfoCardContainer from './Components/InfoCardContainer/InfoCardContainer'
+import '../App/App.css';
+import CharacterCardContainer from '../CharacterCardContainer/CharacterCardContainer'
 
 class App extends Component {
   constructor() {
@@ -22,7 +22,7 @@ class App extends Component {
     return(
       <main className="App">
         <h1>hi app you fucker</h1>
-        <InfoCardContainer/>
+        <CharacterCardContainer characterData={this.state.characterData} />
       </main>
     )
   }
