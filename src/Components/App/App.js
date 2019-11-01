@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App/App.css';
-import CharacterCardContainer from '../CharacterCardContainer/CharacterCardContainer'
+import CharacterCardContainer from '../CharacterCardContainer/CharacterCardContainer';
+import { getCharacters } from '../../apiCalls/apiCalls'
 
 class App extends Component {
   constructor() {
@@ -10,11 +11,7 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    fetch('https://rickandmortyapi.com/api/character')
-      .then(response => response.json())
-      .then(data => {
-        return data.results.map(data => data)
-      })
+    getCharacters()
       .then(characters => this.setState({characterData: characters}))
   }
   render() {
