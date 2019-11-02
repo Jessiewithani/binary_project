@@ -1,0 +1,19 @@
+.card {
+    background-color: grey;
+    max-width: 300px;
+    margin: auto;
+    /* margin-top: 2em; */
+    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 2px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+    border-radius: 20px;
+    /* overflow: hidden; */
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px 20px 0px 0px;
+}
