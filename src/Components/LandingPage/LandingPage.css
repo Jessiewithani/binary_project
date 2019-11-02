@@ -1,0 +1,12 @@
+.landing-page {
+    background-image: url('../../assets/giphy.gif');
+    background-position: center;
+    /* background-position: right 5%; */
+    background-size: 50em;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-color: black;
+    display:flex;
+    justify-content: center center;
+    align-items: center;
+}
