@@ -4,9 +4,20 @@
     /* background-position: right 5%; */
     background-size: 50em;
     background-repeat: no-repeat;
-    height: 100vh;
+    height: 95vh;
     background-color: black;
     display:flex;
     justify-content: center center;
     align-items: center;
+}
+
+.enter {
+    color: white;
+    font-size: 4em;
+    position: relative;
+    left: 9.8em;
+    text-shadow: -1px 1px 0 #000,
+    1px 1px 0 #000,
+   1px -1px 0 #000,
+  -1px -1px 0 #000;
 }

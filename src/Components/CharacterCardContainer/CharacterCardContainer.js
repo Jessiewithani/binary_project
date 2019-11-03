@@ -4,11 +4,11 @@ import { connect } from 'react-redux'
 import '../CharacterCardContainer/CharacterCardContainer.css'
 
 const CharacterCardContainer = ({characters}) =>{
-    // console.log('characters with an s', characters)
+    // console.log('THE WHOLE API DATA', characters)
     const characterCard = characters.map(char => {
-        // console.log('char', char)
-        return char.map(character => {
-            console.log('character', character)
+        console.log('char in container', char)
+        return char.results.map(character => {
+            // console.log('character', character)
             return <CharacterCard 
             id={character.id} 
             key={character.id} 
@@ -23,14 +23,26 @@ const CharacterCardContainer = ({characters}) =>{
 
         })
      })
+const filteredCharacters = (props) => {
+        console.log('chicken', props)
+        props[0].results.filter(character => {
+            
+            return character.name.toLowerCase().includes(this.state.search.toLowerCase()) 
+            //HOW DO I SETSTATE OF MY CHARACTERS TO MY FILTERED CHARACTERS IN REDUX... USE DISPATCH???
+
+        })
+    }
     return(
         <div className="card-container">
             {/* <h2>CHARACTER CONTAINER</h2> */}
             {characterCard}
+            {/* <button>{characters.next}</button> */}
         </div>
     )
 }
 const mapStateToProps = (state) => ({
     characters: state.charactersReducer,
 })
+
+
 export default connect(mapStateToProps)(CharacterCardContainer)

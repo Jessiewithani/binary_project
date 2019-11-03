@@ -2,43 +2,59 @@ import React, { Component } from 'react';
 import '../App/App.css';
 import CharacterCardContainer from '../CharacterCardContainer/CharacterCardContainer';
 import NavBar from '../../Components/NavBar/NavBar';
-// import LandingPage from '../LandingPage/LandingPage';
+import LandingPage from '../LandingPage/LandingPage';
 import Pagination from '../Pagination/Pagination';
 import { getCharacters } from '../../apiCalls/apiCalls'
 import { saveCharacters } from '../../actions'
 import { connect } from 'react-redux';
 
 class App extends Component {
-  // constructor() {
-  //   super()
-  //   this.state = {
-  //     characterData: []
-  //   }
-  // }
+  constructor() {
+    super() 
+    this.state = {
+      next: '',
+      prev: ''
+
+    }
+  }
   componentDidMount() {
     getCharacters()
-    .then(characters => this.props.allCharacters(characters))
+    .then(characters => {
+      console.log('dj', characters.info)
+      this.setState({next: characters.info.next, prev: characters.info.prev})
+      this.props.allCharacters(characters)
+    });
   }
-  render() {
-    // console.log('CHARACTERS DATA', this.state.characterData)
+
+  nextPage = (url) => {
+    getCharacters(url)
+    .then(characters => {
+      console.log('dj', characters.info.next)
+      this.setState({next: characters.info.next, prev: characters.info.prev})
+
+      this.props.allCharacters(characters)
+    });
+}
+
+render() {
     return(
       <main className="App">
-        {/* <h1>HI APP</h1> */}
         <NavBar />
-        {/* <LandingPage /> */}
+        <LandingPage />
         <CharacterCardContainer />
-        <Pagination/>
+        <Pagination nextPage={this.nextPage} next={this.state.next} prev={this.state.prev}/>
       </main>
     )
   }
-}
+} 
 
 // const mapStateToProps = state => ({
 //   characters: state.characters
 // })
 
 const mapDispatchToProps = (dispatch) => ({
-  allCharacters: (characters) => dispatch(saveCharacters(characters))
+  allCharacters: (characters) => dispatch(saveCharacters(characters)),
+  // allLocations: (locations) => dispatch(saveLocations(locations))
 })
 
 

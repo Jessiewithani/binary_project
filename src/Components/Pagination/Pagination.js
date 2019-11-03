@@ -1,19 +1,23 @@
-import React, { Component } from 'react';
-import '../Pagination/Pagination.css';
-class Pagination extends Component {
-    constructor() {
-        super()
-        this.state = {
+import React from 'react';
+import { connect } from 'react-redux';
 
-        }
-    }
-    render() {
+import '../Pagination/Pagination.css';
+
+
+const Pagination = ({nextPage, next, prev}) => {
+    const isPrevDisabled = !prev ? true : false
+    const isNextDisable = !next ? true : false
         return(
             <div className="pagination">
-                <h1>HI PAGINATION</h1>
+                <button disabled={isPrevDisabled} onClick={() => nextPage(prev)}>prev</button>
+                <button disabled={isNextDisable} onClick={() => nextPage(next)}>next</button>
             </div>
         )
-    }
+    
 }
 
-export default Pagination;
+const mapStateToProps = (state) => ({
+    characters: state.charactersReducer,
+})
+
+export default connect(mapStateToProps)(Pagination)
