@@ -23,6 +23,10 @@ describe('App', () => {
     const wrapper = shallow(<App/>)
     expect(wrapper).toMatchSnapshot()
   })
+  it('should retrieve characters after mounting', () => {
+    shallow(<App/>);
+    expect(getCharacters).toHaveBeenCalled()
+  })
 })
 
 describe('mapDispatchToProps in App', () => {
