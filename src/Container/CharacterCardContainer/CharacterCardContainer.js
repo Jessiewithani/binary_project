@@ -76,6 +76,7 @@ const filteredSpecies= () => {
             {search === '' && species.length === 0 && allCharacters()}
             {search === '' && species.length !== 0 && filteredSpecies()}
             {species.length === 0 && search !== '' && filteredCharacters()}
+            {species.length > 0 && search !== '' && filteredCharacters()}
         </div>
     )
 }
