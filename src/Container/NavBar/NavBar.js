@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { searchCharacter, filterSpecies } from '../../actions'
 
 
-class NavBar extends Component {
+export class NavBar extends Component {
     constructor() {
         super()
         this.state = {
@@ -65,7 +65,7 @@ const mapStateToProps = (state) => ({
     characters: state.charactersReducer,
 })
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
     searchCharacter: name => dispatch(searchCharacter(name)),
     filterSpecies: species => dispatch(filterSpecies(species))
 })
