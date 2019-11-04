@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import '../Pagination/Pagination.css';
 
 
-const Pagination = ({nextPage, next, prev}) => {
+export const Pagination = ({nextPage, next, prev}) => {
     const isPrevDisabled = !prev ? true : false
     const isNextDisable = !next ? true : false
         return(
@@ -16,7 +16,7 @@ const Pagination = ({nextPage, next, prev}) => {
     
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
     characters: state.charactersReducer,
 })
 
