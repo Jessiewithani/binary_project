@@ -82,13 +82,13 @@ const filteredSpecies= () => {
 }
 
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
     characters: state.charactersReducer,
     search: state.searchCharactersReducer,
     species: state.filterSpeciesReducer,
 })
 
-const mapDispatchToProps = (dispatch ) => (
+export const mapDispatchToProps = (dispatch ) => (
     bindActionCreators({searchCharacter}, dispatch),
     bindActionCreators({filterSpecies}, dispatch)
 )
