@@ -66,15 +66,13 @@ const filteredSpecies= () => {
 
 const characterCard = search ? filteredCharacters() : allCharacters();
 
-// const speciesCard = species ? filteredSpecies() : allCharacters()
+// const speciesCard = species.length > 0 ? filteredSpecies() : allCharacters()
   
   console.log('SPECIES', species)
     return(
         <div className="card-container">
-            {characterCard} 
+            {/* {characterCard}  */}
             {/* {speciesCard} */}
-          {/* {species.length > 0 && filteredSpecies()}  */}
-           {/* {species.length === 0 && allCharacters()}  */}
         </div>
     )
 }
