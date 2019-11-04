@@ -5,10 +5,11 @@ import '../CharacterCardContainer/CharacterCardContainer.css'
 import { bindActionCreators } from 'redux';
 import { searchCharacter, filterSpecies } from '../../actions'
 
-export const CharacterCardContainer = ({characters, search}) => {
+export const CharacterCardContainer = ({characters, search, species}) => {
+    // console.log('rice', characters, search, species)
     const allCharacters = () => {
         return characters.map(char => {
-        console.log('char in container', char)
+        // console.log('char in container', char)
         return char.results.map(character => {
             return <CharacterCard 
             id={character.id} 
@@ -27,8 +28,6 @@ export const CharacterCardContainer = ({characters, search}) => {
 }
 
  const filteredCharacters = () => {
-        console.log('FILTERED CHARACTERS', characters)
-        
         let filtered = characters[0].results.filter(character => {
             return character.name.toLowerCase().includes(search.toLowerCase()) 
         })
@@ -47,32 +46,35 @@ export const CharacterCardContainer = ({characters, search}) => {
     })
 }
 
-// const humans = () => {
-//     let humanSpecies = characters[0].results.filter(character => {
-//         if(character.species === 'Human') {
-//             console.log('HUMANS', character.species)
-//             return character.includes(species.toLowerCase())
-//         }
-//     }) 
-//     return humanSpecies.map(character => {
-//         return (<CharacterCard 
-//             id={character.id} 
-//             key={character.id} 
-//             name={character.name} 
-//             status={character.status} 
-//             species={character.species} 
-//             type={character.type} 
-//             gender={character.gender} 
-//             location={character.location} 
-//             image={character.image}
-//             />) 
-//     })
-// }
+const filteredSpecies= () => {
+    console.log('SPECIES', species)
+    return species.map(character => {
+        console.log('chirp', character)
+        return (<CharacterCard 
+        id={character.id} 
+        key={character.id} 
+        name={character.name} 
+        status={character.status} 
+        species={character.species} 
+        type={character.type} 
+        gender={character.gender} 
+        location={character.location} 
+        image={character.image}
+        />) 
+})
+}
+
 const characterCard = search ? filteredCharacters() : allCharacters();
 
+const speciesCard = species ? filteredSpecies() : allCharacters()
+  
+  console.log('SPECIES', species)
     return(
         <div className="card-container">
-            {characterCard}
+            {characterCard} 
+            {speciesCard}
+          {species.length > 0 && filteredSpecies()} 
+           {/* {species.length === 0 && allCharacters()}  */}
         </div>
     )
 }

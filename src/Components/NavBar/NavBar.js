@@ -9,7 +9,8 @@ class NavBar extends Component {
         super()
         this.state = {
             search: '',
-            human: []
+            human: [],
+            alien: []
 
         }
     }
@@ -33,7 +34,14 @@ class NavBar extends Component {
     submitHumanSpecies = event => {
         event.preventDefault();
         const { filterSpecies } = this.props;
-        filterSpecies(this.state.human)
+        const human = this.props.characters[0].results.filter(char => char.species === 'Human')
+        
+        // const alien = this.props.characters[0].results.filter(char => char === 'Alien')
+        this.setState({ human })
+        
+        filterSpecies(human)
+        // filterSpecies(alien)
+        
     }
     
     render() {
