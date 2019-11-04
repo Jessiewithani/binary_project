@@ -1,5 +1,5 @@
 import React from 'react';
-import CharacterCard from '../CharacterCard/CharacterCard'
+import CharacterCard from '../../Components/CharacterCard/CharacterCard'
 import { connect } from 'react-redux'
 import '../CharacterCardContainer/CharacterCardContainer.css'
 import { bindActionCreators } from 'redux';

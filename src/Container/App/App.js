@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import './App.css';
-import CharacterCardContainer from '../../Components/CharacterCardContainer/CharacterCardContainer';
-import NavBar from '../../Components/NavBar/NavBar';
+import CharacterCardContainer from '../CharacterCardContainer/CharacterCardContainer';
+import NavBar from '../NavBar/NavBar';
 import LandingPage from '../../Components/LandingPage/LandingPage';
-import Pagination from '../../Components/Pagination/Pagination';
+import Pagination from '../Pagination/Pagination';
 import { getCharacters } from '../../apiCalls/apiCalls'
 import { saveCharacters } from '../../actions'
 import { connect } from 'react-redux';
 
-class App extends Component {
+export class App extends Component {
   constructor() {
     super() 
     this.state = {
@@ -49,7 +49,7 @@ render() {
   }
 } 
 
-const mapDispatchToProps = (dispatch) => ({
+export const mapDispatchToProps = (dispatch) => ({
   allCharacters: (characters) => dispatch(saveCharacters(characters)),
 })
 
