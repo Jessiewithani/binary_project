@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
-import '../App/App.css';
-import CharacterCardContainer from '../CharacterCardContainer/CharacterCardContainer';
+import './App.css';
+import CharacterCardContainer from '../../Components/CharacterCardContainer/CharacterCardContainer';
 import NavBar from '../../Components/NavBar/NavBar';
-import LandingPage from '../LandingPage/LandingPage';
-import Pagination from '../Pagination/Pagination';
+import LandingPage from '../../Components/LandingPage/LandingPage';
+import Pagination from '../../Components/Pagination/Pagination';
 import { getCharacters } from '../../apiCalls/apiCalls'
 import { saveCharacters } from '../../actions'
 import { connect } from 'react-redux';
@@ -49,13 +49,8 @@ render() {
   }
 } 
 
-// const mapStateToProps = state => ({
-//   characters: state.characters
-// })
-
 const mapDispatchToProps = (dispatch) => ({
   allCharacters: (characters) => dispatch(saveCharacters(characters)),
-  // allLocations: (locations) => dispatch(saveLocations(locations))
 })
 
 
