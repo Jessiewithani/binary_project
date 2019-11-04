@@ -8,7 +8,7 @@ export const searchCharacter = (name) => ({
     name
 })
 
-export const saveLocations = (locations) => ({
-    type: 'SAVE_LOCATIONS',
-    locations
+export const filterSpecies = (species) => ({
+    type: 'FILTER_SPECIES',
+    species
 })

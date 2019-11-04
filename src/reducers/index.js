@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import { charactersReducer } from './charactersReducer';
-// import { locationsReducer } from './locationsReducer';
+import { filterSpeciesReducer } from './filterSpeciesReducer';
 import { searchCharactersReducer } from './searchCharactersReducer';
 
 export const rootReducer = combineReducers({
     charactersReducer,
-    // locationsReducer,
+    filterSpeciesReducer,
     searchCharactersReducer
 })

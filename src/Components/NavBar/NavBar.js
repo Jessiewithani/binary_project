@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../NavBar/NavBar.css'
 import { connect } from 'react-redux';
-import { searchCharacter } from '../../actions'
+import { searchCharacter, filterSpecies } from '../../actions'
 
 
 class NavBar extends Component {
@@ -9,6 +9,7 @@ class NavBar extends Component {
         super()
         this.state = {
             search: '',
+            human: []
 
         }
     }
@@ -28,18 +29,20 @@ class NavBar extends Component {
     resetInputs = () => {
         this.setState({search: ''})
     }
+
+    submitHumanSpecies = event => {
+        event.preventDefault();
+        const { filterSpecies } = this.props;
+        filterSpecies(this.state.human)
+    }
     
     render() {
-        // console.log('props')
-        // console.log('search', this.state.search)
-        // console.log('props', this.props)
-        // console.log('state props', this.state.characters)
         return(
             <div className="nav-bar">
                 <div>
                 <button>ALL CHARACTERS</button>
                 <button>ALIENS</button>
-                <button>HUMANS</button>
+                <button onClick={this.submitHumanSpecies}>HUMANS</button>
                 </div>
                 <h2>HI NAV</h2>
                 <div>
@@ -56,7 +59,8 @@ const mapStateToProps = (state) => ({
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    searchCharacter: name => dispatch(searchCharacter(name))
+    searchCharacter: name => dispatch(searchCharacter(name)),
+    filterSpecies: species => dispatch(filterSpecies(species))
 })
 
 
