@@ -51,7 +51,7 @@ const filteredSpecies= () => {
     return species.map(character => {
         console.log('chirp', character)
         return (<CharacterCard 
-        id={character.id} 
+        // id={character.id} 
         key={character.id} 
         name={character.name} 
         status={character.status} 

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../CharacterCard/CharacterCard.css'
 
-const CharacterCard = ({id, name, status, species, type, gender, location, image}) => {
+const CharacterCard = ({ name, status, species, type, gender, location, image}) => {
     // console.log(location);
     return(
         <section className="card">
