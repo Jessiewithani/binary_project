@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom'
 import '../App/App.css';
 import CharacterCardContainer from '../CharacterCardContainer/CharacterCardContainer';
 import NavBar from '../../Components/NavBar/NavBar';
@@ -40,8 +41,8 @@ render() {
     return(
       <main className="App">
         <NavBar />
-        <LandingPage />
-        <CharacterCardContainer />
+        <Route exact path='/' component={LandingPage} />
+        <Route exact path='/characters' component={CharacterCardContainer} />
         <Pagination nextPage={this.nextPage} next={this.state.next} prev={this.state.prev}/>
       </main>
     )

@@ -48,8 +48,7 @@ class NavBar extends Component {
         return(
             <div className="nav-bar">
                 <div>
-                <button>ALL CHARACTERS</button>
-                <button>ALIENS</button>
+                {/* <button>ALIENS</button> */}
                 <button onClick={this.submitHumanSpecies}>HUMANS</button>
                 </div>
                 <h2>HI NAV</h2>
