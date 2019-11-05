@@ -35,7 +35,29 @@ describe('actions', () => {
 
     describe('SEARCH_CHARACTERS', () => {
         it('should have a type of SEARCH_CHARACTERS', () => {
-            
+            const name = 'Morty Smith'
+
+            const expectedAction = {
+                type: 'SEARCH_CHARACTERS',
+                name: 'Morty Smith'
+            }
+            const result = actions.searchCharacter(name);
+
+            expect(result).toEqual(expectedAction)
+        })
+    })
+
+    describe('FILTER_SPECIES', () => {
+        it('should have a type of FILTER_SPECIES', () => {
+            const species = 'Human'
+
+            const expectedAction = {
+                type: 'FILTER_SPECIES',
+                species: 'Human'
+            }
+            const result = actions.filterSpecies(species);
+
+            expect(result).toEqual(expectedAction)
         })
     })
 })
