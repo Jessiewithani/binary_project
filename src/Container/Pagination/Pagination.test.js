@@ -3,12 +3,24 @@ import { Pagination, mapStateToProps} from '../Pagination/Pagination';
 import { shallow } from 'enzyme'
 
 describe('Pagination', () => {
+  let wrapper;
+  let next = "https://rickandmortyapi.com/api/character/?page=3"
+  let prev = "https://rickandmortyapi.com/api/character/?page=2"
+  let nextPageMock = jest.fn()
+  beforeEach(() => {
+    wrapper = shallow(<Pagination nextPage ={nextPageMock} next={next} prev={prev}/>)
+  })
     it('should match the snapshot with the correct data passed in', () => {
-      let next = "https://rickandmortyapi.com/api/character/?page=3"
-      let prev = "https://rickandmortyapi.com/api/character/?page=2"
-      const wrapper = shallow(<Pagination nextPage ={jest.fn()} next={next} prev={prev}/>)
 
       expect(wrapper).toMatchSnapshot()
+
+    })
+    it('should run nextPage when button is clicked', () => {
+      
+      wrapper.find('button').at(1).simulate('click')
+
+      expect(nextPageMock).toHaveBeenCalled()
+
     })
   })
 
