@@ -1,26 +1,21 @@
 .landing-page {
+    align-items: center;
+    background-color: black;
     background-image: url('../../assets/giphy.gif') ;
     background-position: center;
-    background-size: 50em;
     background-repeat: no-repeat;
-    height: 100vh;
-    background-color: black;
+    background-size: 50em;
     display:flex;
+    height: 100vh;
     justify-content: center center;
-    align-items: center;
 }
 
 .enter {
     color: white;
-    font-size: 4em;
     font-family: 'get-schwifty';
-    position: relative;
+    font-size: 4em;
     left: 5.3em;
-    /* text-shadow: 
-   -1px 1px 0 #000,
-    1px 1px 0 #000,
-    1px -1px 0 #000,
-   -1px -1px 0 #000; */
+    position: relative;
 }
 
 .link-to-enter {

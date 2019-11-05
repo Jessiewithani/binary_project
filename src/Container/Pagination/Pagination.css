@@ -1,17 +1,17 @@
 .pagination {
-    background-color:rgb(51, 51, 60);
-    height:100px;
-    display: flex;
-    justify-content: center;
     align-items: center;
+    background-color:rgb(51, 51, 60);
+    display: flex;
+    height:100px;
+    justify-content: center;
 }
 
 button {
-    margin: 0 51px;
-    font-size: 2em;
     background-color: rgb(51, 51, 60);
     border: none;
     color: chocolate;
+    font-size: 2em;
+    margin: 0 51px;
 }
 
 .grow {
@@ -19,8 +19,8 @@ button {
 }
 
 .grow:hover {
-    transform:scale(1.5);
     color: #E89242FF;
+    transform:scale(1.5);
 }
 
 

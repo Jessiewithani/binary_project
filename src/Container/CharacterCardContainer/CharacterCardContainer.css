@@ -1,14 +1,9 @@
 .card-container {
-   
-    /* margin-top: 15px; */
+    align-items: center;
+    background-color: grey;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-template-rows: 85% 85% 85% 85% 85%;
-    align-items: center;
-    justify-content: center;
     height: 100vh;
+    justify-content: center;
     overflow: scroll;
-    /* background-color: #3D373C; */
-    background-color: grey;
-
 }
