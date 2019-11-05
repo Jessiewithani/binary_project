@@ -1,5 +1,6 @@
 import React from 'react';
-import { CharacterCardContainer, mapStateToProps} from '../CharacterCardContainer/CharacterCardContainer';
+import { CharacterCardContainer, mapStateToProps, mapDispatchToProps} from '../CharacterCardContainer/CharacterCardContainer';
+import { searchCharacter } from '../../actions'
 
 describe('CharacterCardContainer', () => {
     it.skip('should...', () => {
@@ -133,8 +134,14 @@ describe('mapStateToProps in CharacterCardContainer', () => {
 })
 
 describe('mapDispatchToProps', () => {
-  it.skip('should', () => {
+  it('calls dispatch with a searchCharacter action when searchCharacter is called', () => {
+    const mockDispatch = jest.fn();
+    const actionToDispatch = searchCharacter( 'Rick Sanchez' )
 
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.searchCharacter('Rick Sanchez')
+
+    expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
   })
 })
   

@@ -89,8 +89,7 @@ export const mapStateToProps = (state) => ({
 })
 
 export const mapDispatchToProps = (dispatch ) => (
-    bindActionCreators({searchCharacter}, dispatch),
-    bindActionCreators({filterSpecies}, dispatch)
+    bindActionCreators({searchCharacter, filterSpecies}, dispatch)
 )
 
 

@@ -61,7 +61,7 @@ export class NavBar extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
+export const mapStateToProps = (state) => ({
     characters: state.charactersReducer,
 })
 
