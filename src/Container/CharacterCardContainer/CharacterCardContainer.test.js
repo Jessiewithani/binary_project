@@ -1,16 +1,14 @@
 import React from 'react';
 import { CharacterCardContainer, mapStateToProps, mapDispatchToProps} from '../CharacterCardContainer/CharacterCardContainer';
-import { searchCharacter } from '../../actions'
+import { searchCharacter } from '../../actions';
+import { shallow } from 'enzyme'
 
 describe('CharacterCardContainer', () => {
-    it.skip('should...', () => {
-      
-
-
-
-
-    })
+  it.skip('should match the snapshot with all the correct data passed in', () => {
+    const wrapper = shallow(<CharacterCardContainer/>)
+    expect(wrapper).toMatchSnapshot()
   })
+    
 
 describe('mapStateToProps in CharacterCardContainer', () => {
   it.skip('should return an array with the characters information in it', () => {
@@ -100,7 +98,7 @@ describe('mapStateToProps in CharacterCardContainer', () => {
           image: 'https://rickandmortyapi.com/api/character/avatar/18.jpeg'
         
       }],
-      filterSpecies: 'FILTER_SPECIES'
+      // filterSpecies: 'FILTER_SPECIES'
     }
     const expected = {
       species: [{
@@ -142,5 +140,7 @@ describe('mapDispatchToProps', () => {
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
   })
+})
+
 })
   

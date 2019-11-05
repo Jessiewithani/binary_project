@@ -1,9 +1,14 @@
 import React from 'react';
 import { Pagination, mapStateToProps} from '../Pagination/Pagination';
+import { shallow } from 'enzyme'
 
 describe('Pagination', () => {
-    it.skip('should...', () => {
-  
+    it('should match the snapshot with the correct data passed in', () => {
+      let next = "https://rickandmortyapi.com/api/character/?page=3"
+      let prev = "https://rickandmortyapi.com/api/character/?page=2"
+      const wrapper = shallow(<Pagination nextPage ={jest.fn()} next={next} prev={prev}/>)
+
+      expect(wrapper).toMatchSnapshot()
     })
   })
 
