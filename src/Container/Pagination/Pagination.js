@@ -10,8 +10,8 @@ export const Pagination = ({nextPage, next, prev}) => {
     const isNextDisable = !next ? true : false
         return(
             <div className="pagination">
-                <button disabled={isPrevDisabled} onClick={() => nextPage(prev)}>prev</button>
-                <button disabled={isNextDisable} onClick={() => nextPage(next)}>next</button>
+                <button className="prev-button grow" disabled={isPrevDisabled} onClick={() => nextPage(prev)}>prev</button>
+                <button className="next-button grow" disabled={isNextDisable} onClick={() => nextPage(next)}>next</button>
             </div>
         )
     

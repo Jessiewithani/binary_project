@@ -1,19 +1,62 @@
 .card {
-    background-color: grey;
+    background-color: rgba(0, 0, 0, 0.4);
+    /* color: #B7E4F999; */
+    color: #B7E4F9FF;
     max-width: 300px;
     margin: auto;
+    /* border: 2px solid gainsboro; */
     /* margin-top: 2em; */
     /* box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 2px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
     border-radius: 20px;
     /* overflow: hidden; */
-    justify-content: center;
-    align-items: center;
-    margin: auto;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* margin: auto; */
+    height: 620px;
+    margin-bottom: 20px;
+    box-shadow: 7px 8px 5px 0px rgba(0,0,0,0.51);
 }
 
 img {
     width: 100%;
-    height: auto;
-    display: block;
+    /* height: auto; */
+    /* display: block; */
     border-radius: 20px 20px 0px 0px;
+}
+
+.card-header {
+    position: relative;
+    /* border-radius:  */
+
+}
+.character-name {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    /* border: 1px solid black; */
+    /* height: 100%; */
+    background-color: rgba(0, 0, 0, 0.3);
+    color: gainsboro;
+
+}
+
+.character-info-container {
+    height: 100%;
+    padding: 0 20px;
+}
+
+.status-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: rgba(0, 0, 0, 0.5); */
+    border-top: 1px solid white;
+    /* padding: 0 20px  */
+    /* height: 100% */
 }

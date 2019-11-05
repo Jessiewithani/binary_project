@@ -2,9 +2,47 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px 0 20px;
-    height: 100;
-    background-color: #24325799;
-    color: #B7E4F999;
+    padding: 0 50px 0 50px;
+    height: 150px;
+    background-color: rgb(51, 51, 60);
+    border-bottom: 3px solid #E89242FF;
+    
+}
+
+.nav-button {
+    font-size: 2em;
+    background-color: rgb(51, 51, 60);
+    border: none;
+    color: #E89242FF;
+    /* color: chocolate; */
+
+}
+
+.nav-button:after {
+    content: '';
+    position: absolute;
+    left: 90px;
+    height: 1em;
+    width: 25%;
+    border-bottom: 3px solid gainsboro;
+    margin-top: 10px;
+    opacity: 0;
+    transition: opactity 0.35s, transform 0.35s;
+    transform: scale(0.1)
+}
+.nav-button:hover:after {
+    opacity: 1;
+    transform: scale(1)
+}
+
+input {
+    font-size: 2.5em;
+    width: 500px;
+    padding-left: 10px;
+    background-color: rgb(51, 51, 60);
+    border: none;
+    border-bottom: 3px solid #E89242FF;
+    color: gainsboro;
+    
 }
 

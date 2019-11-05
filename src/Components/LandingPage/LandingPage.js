@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const LandingPage = () => {
     return(
         <div className="landing-page">
-            <Link to='/characters'><h1 className="enter">RICK AND MORTY</h1></Link>
+            <Link className="link-to-enter" to='/characters'><h1 className="enter">CLICK MY TERRY FOLD</h1></Link>
         </div>
     )
 }

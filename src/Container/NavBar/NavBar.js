@@ -47,15 +47,15 @@ export class NavBar extends Component {
     render() {
         return(
             <div className="nav-bar">
-                <div>
+                {/* <div> */}
                 {/* <button>ALIENS</button> */}
-                <button onClick={this.submitHumanSpecies}>HUMANS</button>
-                </div>
-                <h2>HI NAV</h2>
-                <div>
-                <input type="text" placeholder="search" name="search" value={this.state.search} onChange={this.handleChange}/>
-                <button  onClick={this.handleSubmit}>SEARCH</button>
-                </div>
+                <button className="nav-button" onClick={this.submitHumanSpecies}>SHOW  HUMANS  ONLY</button>
+                {/* </div> */}
+                {/* <h2>HI NAV</h2> */}
+                {/* <div className="input-div"> */}
+                <input type="text" placeholder="search characters" name="search" value={this.state.search} onChange={this.handleChange}/>
+                {/* <button  onClick={this.handleSubmit}>SEARCH</button> */}
+                {/* </div> */}
             </div>
         )
     }

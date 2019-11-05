@@ -18,6 +18,7 @@ describe('NavBar', () => {
       wrapper.instance().handleChange(mockEvent);
       expect(wrapper.state('search')).toEqual(expectedSearch)
     })
+    
   })
 
 describe('mapStateToProps in NavBar', () => {

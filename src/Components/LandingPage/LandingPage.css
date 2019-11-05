@@ -1,5 +1,5 @@
 .landing-page {
-    background-image: url('../../assets/giphy.gif');
+    background-image: url('../../assets/giphy.gif') ;
     background-position: center;
     background-size: 50em;
     background-repeat: no-repeat;
@@ -13,12 +13,16 @@
 .enter {
     color: white;
     font-size: 4em;
-    /* font-family: ''; */
+    font-family: 'get-schwifty';
     position: relative;
-    left: 7.3em;
-    text-shadow: 
+    left: 5.3em;
+    /* text-shadow: 
    -1px 1px 0 #000,
     1px 1px 0 #000,
     1px -1px 0 #000,
-   -1px -1px 0 #000;
+   -1px -1px 0 #000; */
+}
+
+.link-to-enter {
+    text-decoration: none;
 }
