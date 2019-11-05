@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavBar, mapDispatchToProps } from '../NavBar/NavBar';
 import { searchCharacter, filterSpecies } from '../../actions';
+import { shallow } from 'enzyme'
 
 describe('NavBar', () => {
-    it('should', () => {
-  
+    it('should match the snapshot with the correct data passed in', () => {
+      const wrapper = shallow(<NavBar/>)
+      expect(wrapper).toMatchSnapshot();
     })
   })
 
