@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 import '../CharacterCardContainer/CharacterCardContainer.css'
 import { bindActionCreators } from 'redux';
 import { searchCharacter, filterSpecies } from '../../actions'
+import NavBar from '../NavBar/NavBar'
+
 
 export const CharacterCardContainer = ({characters, search, species}) => {
     // console.log('rice', characters, search, species)
@@ -70,13 +72,18 @@ const filteredSpecies= () => {
   
   console.log('SPECIES', species)
     return(
+        <div>
+            <div>
+                <NavBar/>
+            </div>
         <div className="card-container">
-            {/* {characterCard}  */}
-            {/* {speciesCard} */}
+ 
             {search === '' && species.length === 0 && allCharacters()}
             {search === '' && species.length !== 0 && filteredSpecies()}
             {species.length === 0 && search !== '' && filteredCharacters()}
             {species.length > 0 && search !== '' && filteredCharacters()}
+           
+        </div>
         </div>
     )
 }

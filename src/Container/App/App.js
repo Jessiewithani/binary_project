@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
 import './App.css';
 import CharacterCardContainer from '../CharacterCardContainer/CharacterCardContainer';
-import NavBar from '../NavBar/NavBar';
 import LandingPage from '../../Components/LandingPage/LandingPage';
 import Pagination from '../Pagination/Pagination';
 import { getCharacters } from '../../apiCalls/apiCalls'
@@ -40,7 +39,6 @@ export class App extends Component {
 render() {
     return(
       <main className="App">
-        <NavBar />
         <Route exact path='/' component={LandingPage} />
         <Route exact path='/characters' component={CharacterCardContainer} />
         <Pagination nextPage={this.nextPage} next={this.state.next} prev={this.state.prev}/>
