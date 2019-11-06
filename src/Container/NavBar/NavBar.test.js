@@ -1,12 +1,14 @@
 import React from 'react';
+import { shallow } from 'enzyme';
 import { NavBar, mapStateToProps, mapDispatchToProps } from '../NavBar/NavBar';
 import { searchCharacter, filterSpecies } from '../../actions';
-import { shallow } from 'enzyme';
-// import { searchCharacter } from '../../actions'
 
 describe('NavBar', () => {
+
   let wrapper;
+
   let mockSearchCharacters = jest.fn()
+
   beforeEach(() =>{
     wrapper = shallow(<NavBar searchCharacter={mockSearchCharacters}/>)
   })
@@ -30,9 +32,10 @@ describe('NavBar', () => {
       expect(wrapper.instance().submitHumanSpecies).toHaveBeenCalled()
     })
     
-  })
+})
 
 describe('mapStateToProps in NavBar', () => {
+
   it('should return an array of objects with the characters array', () => {
     const mockState =  { charactersReducer: {
         info: {
@@ -99,27 +102,33 @@ describe('mapStateToProps in NavBar', () => {
             created: '2017-11-04T18:48:46.250Z'
           }
         ]
-      } }
-    
+      } 
+    }
       const mappedProps = mapStateToProps(mockState);
-      expect(mappedProps).toEqual(expected)
-})
 
+      expect(mappedProps).toEqual(expected)
+  })
+})
 describe('mapDispatchToProps in navbar', () => {
+
   it('calls dispath with a searchCharacter action when searchCharacter is called', () => {
     const mockDispatch = jest.fn();
-    const actionToDispatch = searchCharacter(17, 'Annie', 'Alive', 'Human', '', 'Female', 'Anatomy Park', 'https://rickandmortyapi.com/api/character/avatar/17.jpeg')
+
+    const actionToDispatch = searchCharacter('Annie')
 
     const mappedProps = mapDispatchToProps(mockDispatch);
-    mappedProps.searchCharacter(17, 'Annie', 'Alive', 'Human', '', 'Female', 'Anatomy Park', 'https://rickandmortyapi.com/api/character/avatar/17.jpeg')
+
+    mappedProps.searchCharacter('Annie')
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
   })
   it('calls dispatch with a filterSpecies action when filterSpecies is called', () => {
     const mockDispatch = jest.fn();
+
     const actionToDispatch = filterSpecies(17, 'Annie', 'Alive', 'Human', '', 'Female', 'Anatomy Park', 'https://rickandmortyapi.com/api/character/avatar/17.jpeg');
 
     const mappedProps = mapDispatchToProps(mockDispatch);
+
     mappedProps.filterSpecies(17, 'Annie', 'Alive', 'Human', '', 'Female', 'Anatomy Park', 'https://rickandmortyapi.com/api/character/avatar/17.jpeg');
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
@@ -127,5 +136,4 @@ describe('mapDispatchToProps in navbar', () => {
 
 })
 
-})
   
