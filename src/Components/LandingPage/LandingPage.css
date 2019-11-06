@@ -1,12 +1,30 @@
 .landing-page {
-    background-image: url('../../assets/giphy.gif');
-    background-position: center;
-    /* background-position: right 5%; */
-    background-size: 50em;
-    background-repeat: no-repeat;
-    height: 100vh;
-    background-color: black;
-    display:flex;
-    justify-content: center center;
     align-items: center;
+    background-color: black;
+    background-image: url('../../assets/giphy.gif') ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 50em;
+    display:flex;
+    height: 100vh;
+    justify-content: center center;
+}
+
+.enter {
+    /* color: #69C8ECFF; */
+    /* color:#5cd2f; */
+    /* color:#5cd2ff;
+     */
+     color: rgb(139, 0, 209);
+    font-family: 'Get Schwifty';
+    font-size: 7em;
+    left: 2.3em;
+    position: relative;
+    /* text-shadow: 5px 5px 6px #00CE30; */
+    text-shadow: 3px 4px 6px rgb(98, 31, 255);
+
+}
+
+.link-to-enter {
+    text-decoration: none;
 }

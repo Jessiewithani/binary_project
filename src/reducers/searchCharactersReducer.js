@@ -1,4 +1,4 @@
-export const searchCharactersReducer = (state = [], action) => {
+export const searchCharactersReducer = (state = '', action) => {
     switch(action.type) {
         case 'SEARCH_CHARACTERS':
             return action.name
@@ -6,3 +6,5 @@ export const searchCharactersReducer = (state = [], action) => {
             return state
     }
 }
+
+

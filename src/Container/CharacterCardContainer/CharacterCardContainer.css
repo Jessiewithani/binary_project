@@ -1,0 +1,9 @@
+.card-container {
+    align-items: center;
+    background-color: grey;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    height: 100vh;
+    justify-content: center;
+    overflow: scroll;
+}

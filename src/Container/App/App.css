@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+  margin-left: 3.2em;
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'Get Schwifty';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../../Fonts/GetSchwifty-Regular.woff') format(‘woff’)
+}

@@ -3,17 +3,17 @@ export const saveCharacters = (characters) => ({
     characters
 })
 
-export const saveFavorites = (favorites) => ({
-    type: 'SAVE_FAVORITES',
-    favorites
-})
-
-export const removeFavorites = (id) => ({
-    type: 'REMOVE_FAVORITES',
-    id
-})
-
 export const searchCharacter = (name) => ({
     type: 'SEARCH_CHARACTERS',
     name
+})
+
+export const filterSpecies = (species) => ({
+    type: 'FILTER_SPECIES',
+    species
+})
+
+export const toggleLoading = (boolean) => ({
+    type: 'TOGGLE_LOADING',
+    boolean
 })

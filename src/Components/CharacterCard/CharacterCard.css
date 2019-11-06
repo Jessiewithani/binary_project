@@ -1,19 +1,46 @@
 .card {
-    background-color: grey;
-    max-width: 300px;
-    margin: auto;
-    /* margin-top: 2em; */
-    /* box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 2px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px; */
+    background-color: rgba(0, 0, 0, 0.4);
     border-radius: 20px;
-    /* overflow: hidden; */
-    justify-content: center;
-    align-items: center;
+    box-shadow: 7px 8px 5px 0px rgba(0,0,0,0.51);
+    color: #B7E4F9FF;
+    height: 620px;
     margin: auto;
+    margin-bottom: 20px;
+    margin-top:20px;
+    max-width: 300px;
 }
 
 img {
-    width: 100%;
-    height: auto;
-    display: block;
     border-radius: 20px 20px 0px 0px;
+    width: 100%;
+}
+
+.card-header {
+    position: relative;
+}
+.character-name {
+    background-color: rgba(0, 0, 0, 0.3);
+    bottom: 0px;
+    color: gainsboro;
+    position: absolute;
+    width: 100%;
+
+}
+
+.character-info-container {
+    height: 100%;
+    padding: 0 20px;
+}
+
+.status-info {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    align-items: center;
+    border-top: 1px solid white;
+    display: flex;
+    justify-content: space-between;
 }
