@@ -45,5 +45,5 @@ describe('apiCalls', () => {
         expect(getCharacters()).rejects.toEqual(Error('fetch failed'))
       })
     })
-  })
+})
   
