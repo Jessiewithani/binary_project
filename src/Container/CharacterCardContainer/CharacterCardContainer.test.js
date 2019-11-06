@@ -5,15 +5,15 @@ import { shallow } from 'enzyme'
 
 describe('CharacterCardContainer', () => {
   it.skip('should match the snapshot with all the correct data passed in', () => {
-    const wrapper = shallow(<CharacterCardContainer/>)
+    const wrapper = shallow(<CharacterCardContainer species={jest.fn()} filteredCharacters={jest.fn()}/>)
     expect(wrapper).toMatchSnapshot()
   })
     
 
 describe('mapStateToProps in CharacterCardContainer', () => {
-  it.skip('should return an array with the characters information in it', () => {
+  it('should return an array with the characters information in it', () => {
     const mockState = {
-      characters: {  
+      charactersReducer: {  
         info: { 
             count: 3, 
             pages: 34, 
@@ -35,7 +35,7 @@ describe('mapStateToProps in CharacterCardContainer', () => {
       saveCharacters: 'SAVE_CHARACTERS'
     }
 
-    const expected = {  
+    const expected = { characters:{  
       info: { 
           count: 3, 
           pages: 34, 
@@ -54,15 +54,15 @@ describe('mapStateToProps in CharacterCardContainer', () => {
           }
       ]
   }
-  
+}
   
     const mappedProps = mapStateToProps(mockState);
 
     expect(mappedProps).toEqual(expected)
   })
-  it.skip('should return a string with the character\'s name', () => {
+  it('should return a string with the character\'s name', () => {
     const mockState = {
-      search: 'Morty Smith',
+      searchCharactersReducer: 'Morty Smith',
       searchCharacter: 'SEARCH_CHARACTERS'
     }
 
@@ -74,9 +74,9 @@ describe('mapStateToProps in CharacterCardContainer', () => {
 
     expect(mappedProps).toEqual(expected)
   })
-  it.skip('should give back am array of the human species', () => {
+  it('should give back am array of the human species', () => {
     const mockState = {
-      species: [{
+      filterSpeciesReducer: [{
         
           id: 17,
           name: 'Annie',
@@ -98,7 +98,7 @@ describe('mapStateToProps in CharacterCardContainer', () => {
           image: 'https://rickandmortyapi.com/api/character/avatar/18.jpeg'
         
       }],
-      // filterSpecies: 'FILTER_SPECIES'
+      filterSpecies: 'FILTER_SPECIES'
     }
     const expected = {
       species: [{
