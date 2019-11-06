@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
-import '../../Container/App/App.css';
 import CharacterCardContainer from '../CharacterCardContainer/CharacterCardContainer';
 import LandingPage from '../../Components/LandingPage/LandingPage';
 import Pagination from '../Pagination/Pagination';
+import { Route } from 'react-router-dom'
+import { connect } from 'react-redux';
 import { getCharacters } from '../../apiCalls/apiCalls'
 import { saveCharacters } from '../../actions'
-import { connect } from 'react-redux';
+import '../../Container/App/App.css';
 
 export class App extends Component {
   constructor() {
@@ -14,13 +14,11 @@ export class App extends Component {
     this.state = {
       next: '',
       prev: ''
-
     }
   }
   componentDidMount() {
     getCharacters()
     .then(characters => {
-      console.log('CHARACTERS IN APP', characters.info)
       this.setState({next: characters.info.next, prev: characters.info.prev})
       this.props.allCharacters(characters)
     });
@@ -29,9 +27,7 @@ export class App extends Component {
   nextPage = (url) => {
     getCharacters(url)
     .then(characters => {
-      console.log('dj', characters.info.next)
       this.setState({next: characters.info.next, prev: characters.info.prev})
-
       this.props.allCharacters(characters)
     });
 }

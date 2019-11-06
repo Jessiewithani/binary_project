@@ -40,7 +40,7 @@ describe('CharacterCardContainer', () => {
     const wrapper = shallow(<CharacterCardContainer species={jest.fn()} characters={mockCharacters.results}/>)
     expect(wrapper).toMatchSnapshot()
   })
-    
+})   
 
 describe('mapStateToProps in CharacterCardContainer', () => {
   it('should return an array with the characters information in it', () => {
@@ -85,16 +85,17 @@ describe('mapStateToProps in CharacterCardContainer', () => {
               image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
           }
       ]
+    }
   }
-}
-  
     const mappedProps = mapStateToProps(mockState);
 
     expect(mappedProps).toEqual(expected)
-  })
+})
   it('should return a string with the character\'s name', () => {
     const mockState = {
+
       searchCharactersReducer: 'Morty Smith',
+
       searchCharacter: 'SEARCH_CHARACTERS'
     }
 
@@ -109,7 +110,6 @@ describe('mapStateToProps in CharacterCardContainer', () => {
   it('should give back am array of the human species', () => {
     const mockState = {
       filterSpeciesReducer: [{
-        
           id: 17,
           name: 'Annie',
           status: 'Alive',
@@ -128,13 +128,11 @@ describe('mapStateToProps in CharacterCardContainer', () => {
           gender: 'Male',
           location: 'Citadel of Ricks',
           image: 'https://rickandmortyapi.com/api/character/avatar/18.jpeg'
-        
       }],
       filterSpecies: 'FILTER_SPECIES'
     }
     const expected = {
       species: [{
-        
         id: 17,
         name: 'Annie',
         status: 'Alive',
@@ -153,7 +151,6 @@ describe('mapStateToProps in CharacterCardContainer', () => {
         gender: 'Male',
         location: 'Citadel of Ricks',
         image: 'https://rickandmortyapi.com/api/character/avatar/18.jpeg'
-      
     }]
     }
     const mappedProps = mapStateToProps(mockState);
@@ -165,14 +162,15 @@ describe('mapStateToProps in CharacterCardContainer', () => {
 describe('mapDispatchToProps', () => {
   it('calls dispatch with a searchCharacter action when searchCharacter is called', () => {
     const mockDispatch = jest.fn();
+
     const actionToDispatch = searchCharacter( 'Rick Sanchez' )
 
     const mappedProps = mapDispatchToProps(mockDispatch);
+
     mappedProps.searchCharacter('Rick Sanchez')
 
     expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
   })
 })
 
-})
   
