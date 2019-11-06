@@ -4,6 +4,7 @@ import { shallow } from 'enzyme';
 
 describe('CharacterCard', () => {
   let wrapper;
+
   beforeEach(() => {
     wrapper = shallow(
       <CharacterCard 
@@ -19,6 +20,6 @@ describe('CharacterCard', () => {
   })
   it('should match the snapshot with all the correct data passed in', () => {
     expect(wrapper).toMatchSnapshot()
-    })
   })
+})
   
