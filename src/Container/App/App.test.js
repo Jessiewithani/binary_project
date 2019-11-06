@@ -39,32 +39,33 @@ describe('mapDispatchToProps in App', () => {
       type: '',
       gender: 'Male',
       location: 'Earch (Replaement Dimension'
-  }, {
-    name: 'Big Head Morty',
-    status: 'unknown',
-    species: 'Human',
-    type: 'Humam with giant head',
-    gender: 'Male',
-    location: 'Citadel of Ricks'
-}]);
+    }, {
+      name: 'Big Head Morty',
+      status: 'unknown',
+      species: 'Human',
+      type: 'Humam with giant head',
+      gender: 'Male',
+      location: 'Citadel of Ricks'
+      }]);
 
-const mappedProps = mapDispatchToProps(mockDispatch);
-mappedProps.allCharacters([{
-  name: 'Morty Smith',
-  status: 'Alive',
-  species: 'Human',
-  type: '',
-  gender: 'Male',
-  location: 'Earch (Replaement Dimension'
-}, {
-name: 'Big Head Morty',
-status: 'unknown',
-species: 'Human',
-type: 'Humam with giant head',
-gender: 'Male',
-location: 'Citadel of Ricks'
-}])
+    const mappedProps = mapDispatchToProps(mockDispatch);
+    mappedProps.allCharacters([{
+      name: 'Morty Smith',
+      status: 'Alive',
+      species: 'Human',
+      type: '',
+      gender: 'Male',
+      location: 'Earch (Replaement Dimension'
+    } , {
+        name: 'Big Head Morty',
+        status: 'unknown',
+        species: 'Human',
+        type: 'Humam with giant head',
+        gender: 'Male',
+        location: 'Citadel of Ricks'
+      }
+    ])
 
-expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
+      expect(mockDispatch).toHaveBeenCalledWith(actionToDispatch)
   })
 })
