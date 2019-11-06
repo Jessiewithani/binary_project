@@ -15,64 +15,91 @@ describe('Pagination', () => {
       expect(wrapper).toMatchSnapshot()
 
     })
-    it('should run nextPage when button is clicked', () => {
+    it('should run nextPage when prev button is clicked', () => {
       
-      wrapper.find('button').at(1).simulate('click')
+      wrapper.find('button').at(0).simulate('click')
 
       expect(nextPageMock).toHaveBeenCalled()
 
     })
+    it('should run nextPage when next button is clicked', () => {
+
+      wrapper.find('button').at(1).simulate('click')
+
+      expect(nextPageMock).toHaveBeenCalled()
+    })
   })
 
   describe('mapStateToProps in Pagination', () => {
-    it.skip('should return an array of characters', () => {
-      const mockState = {
-        characters: [{
-          id: 17,
-          name: 'Annie',
-          status: 'Alive',
-          species: 'Human',
-          type: '',
-          gender: 'Female',
-          location: 'Anatomy Park',
-          image: 'https://rickandmortyapi.com/api/character/avatar/17.jpeg'
-        }, {
-          id: 18,
-          name: 'Antenna Morty',
-          status: 'Alive',
-          species: 'Human',
-          type: 'Human with antennae',
-          gender: 'Male',
-          location: 'Citadel of Ricks',
-          image: 'https://rickandmortyapi.com/api/character/avatar/18.jpeg'
-        
-      }],
-      saveCharacters: 'SAVE_CHARACTERS'
-      };
-      const expected = {
-        characters: [{
-          id: 17,
-          name: 'Annie',
-          status: 'Alive',
-          species: 'Human',
-          type: '',
-          gender: 'Female',
-          location: 'Anatomy Park',
-          image: 'https://rickandmortyapi.com/api/character/avatar/17.jpeg'
-        }, {
-          id: 18,
-          name: 'Antenna Morty',
-          status: 'Alive',
-          species: 'Human',
-          type: 'Human with antennae',
-          gender: 'Male',
-          location: 'Citadel of Ricks',
-          image: 'https://rickandmortyapi.com/api/character/avatar/18.jpeg'
-        
-      }]
-      }
+    it('should return an array of characters', () => {
+      const mockState =  { charactersReducer: {
+        info: {
+          count: 493,
+          pages: 25,
+          next: 'http://rickandmortyapi.com/api/character/?page=2',
+          prev: ''
+        },
+        results: [
+          {
+            id: 1,
+            name: 'Rick Sanchez',
+            status: 'Alive',
+            species: 'Human',
+            type: '',
+            gender: 'Male',
+            origin: {
+              name: 'Earch (C-137)',
+              url: 'https://rickandmortyapi.com/api/location/1'
+            },
+            location: {
+              name: 'Earth (Replacement Dimension)',
+              url: 'https://rickandmortyapi.com/api/location/20'
+            },
+            image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+            episode: [
+              "https://rickandmortyapi.com/api/episode/1",
+              "https://rickandmortyapi.com/api/episode/2",
+            ],
+            url: 'https://rickandmortyapi.com/api/character/1',
+            created: '2017-11-04T18:48:46.250Z'
+          }
+        ]
+      }}
+      const expected = {characters: {
+        info: {
+          count: 493,
+          pages: 25,
+          next: 'http://rickandmortyapi.com/api/character/?page=2',
+          prev: ''
+        },
+        results: [
+          {
+            id: 1,
+            name: 'Rick Sanchez',
+            status: 'Alive',
+            species: 'Human',
+            type: '',
+            gender: 'Male',
+            origin: {
+              name: 'Earch (C-137)',
+              url: 'https://rickandmortyapi.com/api/location/1'
+            },
+            location: {
+              name: 'Earth (Replacement Dimension)',
+              url: 'https://rickandmortyapi.com/api/location/20'
+            },
+            image: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+            episode: [
+              "https://rickandmortyapi.com/api/episode/1",
+              "https://rickandmortyapi.com/api/episode/2",
+            ],
+            url: 'https://rickandmortyapi.com/api/character/1',
+            created: '2017-11-04T18:48:46.250Z'
+          }
+        ]
+      } }
+    
       const mappedProps = mapStateToProps(mockState);
-
       expect(mappedProps).toEqual(expected)
     })
   })
