@@ -1,6 +1,7 @@
 import { charactersReducer } from '../charactersReducer'
 
 describe('charactersReducer', () => {
+
     it('should return the initial state', () => {
         const expected = []
 
@@ -10,6 +11,7 @@ describe('charactersReducer', () => {
     });
     it('should be able to return characters', () => {
         const initialState = [];
+        
         const action = {
             type: 'SAVE_CHARACTERS',
             characters: {  

@@ -1,13 +1,17 @@
 import { filterSpeciesReducer } from '../filterSpeciesReducer';
 
 describe('filterSpeciesReducer', () => {
+
     it('should return the initial state', () => {
         const expected = [];
+
         const result = filterSpeciesReducer(undefined, []);
+        
         expect(result).toEqual(expected)
     });
     it('should be able to filter characters by humans', () => {
         const initialState = [];
+
         const action = {
             type: 'FILTER_SPECIES', 
             species: [{   

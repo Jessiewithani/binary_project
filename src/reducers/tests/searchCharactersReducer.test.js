@@ -1,6 +1,7 @@
 import { searchCharactersReducer } from '../searchCharactersReducer'
 
 describe('searchCharactersReducer', () => {
+    
     it('should run the initial state', () => {
         const expected = ''
 
