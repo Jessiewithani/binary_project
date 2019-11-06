@@ -62,17 +62,16 @@ const filteredSpecies= () => {
 }
     return(
         <div>
-        {console.log('LOADING',isLoading)}
             <div>
                 <NavBar/>
             </div>
             <div className="card-container">
                 {search === '' && species.length === 0 && allCharacters()}
-                {isLoading && <img src={loadingGif} alt='loading-icon' />}
-                {!isLoading && allCharacters}
                 {search === '' && species.length !== 0 && filteredSpecies()}
                 {species.length === 0 && search !== '' && filteredCharacters()}
                 {species.length > 0 && search !== '' && filteredCharacters()}
+                {/* {isLoading && <img src={loadingGif} alt='loading-icon' />}
+                {!isLoading && allCharacters()} */}
             </div>
         </div>
     )
