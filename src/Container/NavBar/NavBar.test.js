@@ -6,15 +6,16 @@ import { shallow } from 'enzyme';
 
 describe('NavBar', () => {
   let wrapper;
+  let mockSearchCharacters = jest.fn()
+  beforeEach(() =>{
+    wrapper = shallow(<NavBar searchCharacter={mockSearchCharacters}/>)
+  })
     it('should match the snapshot with the correct data passed in', () => {
-       wrapper = shallow(<NavBar/>)
       expect(wrapper).toMatchSnapshot();
     })
-    it.skip('should update state when handleChange is called', () => {
+    it('should update state when handleChange is called', () => {
       const mockEvent = {target: {name: 'search', value: 'Morty Smith'}}
       const expectedSearch = 'Morty Smith'
-      // const mockSearchCharacters = jest.fn() //need to mock out searchCharacters
-
       wrapper.instance().handleChange(mockEvent);
       expect(wrapper.state('search')).toEqual(expectedSearch)
     })
