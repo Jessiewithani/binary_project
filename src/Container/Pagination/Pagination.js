@@ -1,9 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
-
 import '../Pagination/Pagination.css';
-
 
 export const Pagination = ({nextPage, next, prev}) => {
     const isPrevDisabled = !prev ? true : false
@@ -14,7 +11,6 @@ export const Pagination = ({nextPage, next, prev}) => {
                 <button className="next-button grow" disabled={isNextDisable} onClick={() => nextPage(next)}>next</button>
             </div>
         )
-    
 }
 
 export const mapStateToProps = (state) => ({

@@ -1,12 +1,16 @@
 import React from 'react';
-import { Pagination, mapStateToProps} from '../Pagination/Pagination';
 import { shallow } from 'enzyme'
+import { Pagination, mapStateToProps} from '../Pagination/Pagination';
 
 describe('Pagination', () => {
   let wrapper;
+
   let next = "https://rickandmortyapi.com/api/character/?page=3"
+
   let prev = "https://rickandmortyapi.com/api/character/?page=2"
+
   let nextPageMock = jest.fn()
+
   beforeEach(() => {
     wrapper = shallow(<Pagination nextPage ={nextPageMock} next={next} prev={prev}/>)
   })
@@ -28,9 +32,10 @@ describe('Pagination', () => {
 
       expect(nextPageMock).toHaveBeenCalled()
     })
-  })
+})
 
   describe('mapStateToProps in Pagination', () => {
+
     it('should return an array of characters', () => {
       const mockState =  { charactersReducer: {
         info: {
@@ -97,9 +102,10 @@ describe('Pagination', () => {
             created: '2017-11-04T18:48:46.250Z'
           }
         ]
-      } }
-    
+      } 
+    }
       const mappedProps = mapStateToProps(mockState);
+
       expect(mappedProps).toEqual(expected)
     })
   })
