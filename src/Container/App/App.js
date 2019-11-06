@@ -5,7 +5,7 @@ import Pagination from '../Pagination/Pagination';
 import { Route } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { getCharacters } from '../../apiCalls/apiCalls'
-import { saveCharacters } from '../../actions'
+import { saveCharacters, toggleLoading } from '../../actions'
 import '../../Container/App/App.css';
 
 export class App extends Component {
@@ -17,19 +17,23 @@ export class App extends Component {
     }
   }
   componentDidMount() {
+    this.props.toggleLoading(true)
     getCharacters()
     .then(characters => {
       this.setState({next: characters.info.next, prev: characters.info.prev})
       this.props.allCharacters(characters)
+      this.props.toggleLoading(false)
     });
   }
 
   nextPage = (url) => {
+    this.props.toggleLoading(true)
     getCharacters(url)
     .then(characters => {
       this.setState({next: characters.info.next, prev: characters.info.prev})
       this.props.allCharacters(characters)
-    });
+      this.props.toggleLoading(false)
+    })
 }
 
 render() {
@@ -45,6 +49,8 @@ render() {
 
 export const mapDispatchToProps = (dispatch) => ({
   allCharacters: (characters) => dispatch(saveCharacters(characters)),
+  toggleLoading: (boolean) => dispatch(toggleLoading(boolean))
+
 })
 
 

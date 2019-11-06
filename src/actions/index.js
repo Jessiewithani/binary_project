@@ -12,3 +12,8 @@ export const filterSpecies = (species) => ({
     type: 'FILTER_SPECIES',
     species
 })
+
+export const toggleLoading = (boolean) => ({
+    type: 'TOGGLE_LOADING',
+    boolean
+})

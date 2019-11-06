@@ -5,8 +5,9 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux';
 import { searchCharacter, filterSpecies } from '../../actions'
 import '../CharacterCardContainer/CharacterCardContainer.css'
+import { loadingGif } from '../../assets/loading-gif.webp'
 
-export const CharacterCardContainer = ({characters, search, species}) => {
+export const CharacterCardContainer = ({characters, search, species, isLoading}) => {
     const allCharacters = () => {
         return characters.map(char => {
         return char.results.map(character => {
@@ -61,11 +62,14 @@ const filteredSpecies= () => {
 }
     return(
         <div>
+        {console.log('LOADING',isLoading)}
             <div>
                 <NavBar/>
             </div>
             <div className="card-container">
                 {search === '' && species.length === 0 && allCharacters()}
+                {isLoading && <img src={loadingGif} alt='loading-icon' />}
+                {!isLoading && allCharacters}
                 {search === '' && species.length !== 0 && filteredSpecies()}
                 {species.length === 0 && search !== '' && filteredCharacters()}
                 {species.length > 0 && search !== '' && filteredCharacters()}
@@ -78,6 +82,7 @@ export const mapStateToProps = (state) => ({
     characters: state.charactersReducer,
     search: state.searchCharactersReducer,
     species: state.filterSpeciesReducer,
+    isLoading: state.toggleLoadingReducer
 })
 
 export const mapDispatchToProps = (dispatch ) => (
