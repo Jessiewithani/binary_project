@@ -20,12 +20,12 @@ export class NavBar extends Component {
         
     }
     
-    handleSubmit = (event) => {
-        event.preventDefault();
-        const { searchCharacter } = this.props;
-        searchCharacter(this.state.search)
-        this.resetInputs();
-    }
+    // handleSubmit = (event) => {
+    //     event.preventDefault();
+    //     const { searchCharacter } = this.props;
+    //     searchCharacter(this.state.search)
+    //     this.resetInputs();
+    // }
     
     resetInputs = () => {
         this.setState({search: ''})

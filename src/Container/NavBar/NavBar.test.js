@@ -19,6 +19,16 @@ describe('NavBar', () => {
       wrapper.instance().handleChange(mockEvent);
       expect(wrapper.state('search')).toEqual(expectedSearch)
     })
+    it('should call submitHumanSpecies when the button is clicked', () => {
+      wrapper.instance().submitHumanSpecies = jest.fn();
+      const mockEvent = { preventDefault: jest.fn()}
+
+      wrapper.instance().forceUpdate();
+
+      wrapper.find('button').simulate('click', mockEvent)
+
+      expect(wrapper.instance().submitHumanSpecies).toHaveBeenCalled()
+    })
     
   })
 
