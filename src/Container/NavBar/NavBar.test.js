@@ -22,8 +22,8 @@ describe('NavBar', () => {
   })
 
 describe('mapStateToProps in NavBar', () => {
-  it.skip('should return an array of objects with the characters array', () => {
-    const mockState = { characters: {
+  it('should return an array of objects with the characters array', () => {
+    const mockState =  { charactersReducer: {
         info: {
           count: 493,
           pages: 25,
@@ -55,9 +55,8 @@ describe('mapStateToProps in NavBar', () => {
             created: '2017-11-04T18:48:46.250Z'
           }
         ]
-      }
-    }
-      const expected = {
+      }}
+      const expected = {characters: {
         info: {
           count: 493,
           pages: 25,
@@ -89,7 +88,7 @@ describe('mapStateToProps in NavBar', () => {
             created: '2017-11-04T18:48:46.250Z'
           }
         ]
-      }
+      } }
     
       const mappedProps = mapStateToProps(mockState);
       expect(mappedProps).toEqual(expected)
