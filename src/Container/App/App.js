@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom'
-import './App.css';
+import '../../Container/App/App.css';
 import CharacterCardContainer from '../CharacterCardContainer/CharacterCardContainer';
 import LandingPage from '../../Components/LandingPage/LandingPage';
 import Pagination from '../Pagination/Pagination';
@@ -20,7 +20,7 @@ export class App extends Component {
   componentDidMount() {
     getCharacters()
     .then(characters => {
-      console.log('dj', characters.info)
+      console.log('CHARACTERS IN APP', characters.info)
       this.setState({next: characters.info.next, prev: characters.info.prev})
       this.props.allCharacters(characters)
     });

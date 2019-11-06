@@ -11,11 +11,18 @@
 }
 
 .enter {
-    color: white;
-    font-family: 'get-schwifty';
-    font-size: 4em;
-    left: 5.3em;
+    /* color: #69C8ECFF; */
+    /* color:#5cd2f; */
+    /* color:#5cd2ff;
+     */
+     color: rgb(139, 0, 209);
+    font-family: 'Get Schwifty';
+    font-size: 7em;
+    left: 2.3em;
     position: relative;
+    /* text-shadow: 5px 5px 6px #00CE30; */
+    text-shadow: 3px 4px 6px #F81FFF;
+
 }
 
 .link-to-enter {

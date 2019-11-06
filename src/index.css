@@ -12,12 +12,8 @@ code {
     monospace;
 }
 
-@font-face {
+/* @font-face {
   font-family: 'get-schwifty';
   src: local('get-schwifty');
-}
-
-/* @font-face {
-  font-family: 'heavy-metal';
-  src: local('heavy-metal')
 } */
+

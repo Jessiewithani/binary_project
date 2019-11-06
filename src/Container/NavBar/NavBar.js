@@ -34,28 +34,21 @@ export class NavBar extends Component {
     submitHumanSpecies = event => {
         event.preventDefault();
         const { filterSpecies } = this.props;
+
+        // console.log('FILTERSPECIES', filterSpecies)
         const human = this.props.characters[0].results.filter(char => char.species === 'Human')
-        
-        // const alien = this.props.characters[0].results.filter(char => char === 'Alien')
+        console.log('MAPCHARACTERS', this.props.characters)
         this.setState({ human })
         
         filterSpecies(human)
-        // filterSpecies(alien)
         
     }
     
     render() {
         return(
             <div className="nav-bar">
-                {/* <div> */}
-                {/* <button>ALIENS</button> */}
                 <button className="nav-button" onClick={this.submitHumanSpecies}>SHOW  HUMANS  ONLY</button>
-                {/* </div> */}
-                {/* <h2>HI NAV</h2> */}
-                {/* <div className="input-div"> */}
                 <input type="text" placeholder="search characters" name="search" value={this.state.search} onChange={this.handleChange}/>
-                {/* <button  onClick={this.handleSubmit}>SEARCH</button> */}
-                {/* </div> */}
             </div>
         )
     }

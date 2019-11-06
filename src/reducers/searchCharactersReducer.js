@@ -7,7 +7,4 @@ export const searchCharactersReducer = (state = '', action) => {
     }
 }
 
-//submit handle in NAV --> dispatch action to filter in the store
-//mapStateToProps which is going to be the search value
-//it container do condition.... 
 

@@ -4,3 +4,9 @@
   margin: 0;
 }
 
+@font-face {
+  font-family: 'Get Schwifty';
+  font-weight: normal;
+  font-style: normal;
+  src: url('../../Fonts/GetSchwifty-Regular.woff') format(‘woff’)
+}

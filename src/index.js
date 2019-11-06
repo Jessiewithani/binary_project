@@ -8,7 +8,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { rootReducer } from './reducers/index';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import '../src/Fonts/get-schwifty.ttf'
+
 
 const store = createStore(rootReducer, composeWithDevTools())
 
