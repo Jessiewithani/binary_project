@@ -30,7 +30,6 @@ const CharacterCard = ({ id, name, status, species, type, gender, location, imag
                     <span>location:</span><h4>{location.name}</h4>
                 </div>
             </div>
-            {/* <h3>{image}</h3> */}
         </section>
     )
 }
