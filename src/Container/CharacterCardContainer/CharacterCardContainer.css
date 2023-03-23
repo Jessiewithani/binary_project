@@ -3,7 +3,8 @@
     background-color: grey;
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    height: 100vh;
+    /* height: 100vh; */
     justify-content: center;
-    overflow: scroll;
+    padding: 50px 0px;
+    /* overflow: scroll; */
 }

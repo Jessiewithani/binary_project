@@ -7,7 +7,7 @@
     background-size: 50em;
     display:flex;
     height: 100vh;
-    justify-content: center center;
+    justify-content: center;
 }
 
 .enter {
@@ -18,8 +18,8 @@
      color: rgb(139, 0, 209);
     font-family: 'Get Schwifty';
     font-size: 7em;
-    left: 2.3em;
-    position: relative;
+    /* left: 2.3em; */
+    /* position: relative; */
     /* text-shadow: 5px 5px 6px #00CE30; */
     text-shadow: 3px 4px 6px rgb(98, 31, 255);
 
