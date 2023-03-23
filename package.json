@@ -11,6 +11,9 @@
     "redux": "^4.0.4",
     "redux-devtools-extension": "^2.13.8"
   },
+  "engines": {
+    "node": "18.x"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
